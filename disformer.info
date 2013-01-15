@@ -1,0 +1,3 @@
+name = Disformer
+description = Provides functionality to disable forms after submission.
+core = 7.x

@@ -1,0 +1,63 @@
+<?php
+
+/**
+ * @file
+ * Provides functionality to disable forms after submission.
+ */
+
+/**
+ * Implements hook_init().
+ */
+function disformer_menu() {
+  $items['admin/config/user-interface/disformer'] = array(
+    'title' => 'Double Form Submissions Protection',
+    'description' => 'Configure forms with double submit protection.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('disformer_admin_settings_form'),
+    'access arguments' => array('administer disformer'),
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'disformer.admin.inc',
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function disformer_form_alter(&$form, &$form_state, $form_id) {
+  if ( disformer_form_is_enabled($form_id) ) {
+    $form['#attached']['js'] = array(
+      drupal_get_path('module', 'disformer') . '/js/disformer.js',
+    );
+
+    // Select any submit buttons on form.
+    $selector = array(
+      '#' . $form['#id'] . ' button',
+      '#' . $form['#id'] . ' input[type="submit"]',
+    );
+
+    // Set plugin options.
+    $options = array(
+      'delay' => variable_get('disformer_delay', 1000),
+      'opacity' => variable_get('disformer_opacity', 0.5),
+      'text' => variable_get('disformer_text', 'Sending ...'),
+      'debug' => variable_get('disformer_debug', FALSE),
+    );
+
+    drupal_add_js(array('disformer' => array(implode(', ', $selector) => $options)), 'setting');
+  }
+}
+
+/**
+ * Determine if form is enabled with disformer.
+ */
+function disformer_form_is_enabled($form_id) {
+  return in_array($form_id, disformer_form_ids());
+}
+
+/**
+ * Returns an array of form ids that have disformer enabled on them.
+ */
+function disformer_form_ids() {
+  return array_map('trim', explode("\n", variable_get('disformer_form_ids', '')));
+}
