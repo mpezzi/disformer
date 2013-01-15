@@ -5,8 +5,7 @@
       $.each(settings.disformer, function(selector, options){
         $(selector, context)
           .once('disformer')
-          .disformer(options)
-          .css('border', '1px solid #f00');
+          .disformer(options);
       });
     }
   };
