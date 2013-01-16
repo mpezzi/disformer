@@ -30,7 +30,7 @@ function disformer_admin_settings_form($form, &$form_state) {
   $form['disformer_text'] = array(
     '#type' => 'textfield',
     '#title' => t('Text in overlay'),
-    '#description' => t('This text is shown to the user after the submit button is pressed.'),
+    '#description' => t('This text is shown to the user after the submit button is pressed. If left blank, it will default to "Sending ..." with translation ability.'),
     '#default_value' => variable_get('disformer_text', 'Sending ...'),
   );
   $form['disformer_debug'] = array(
