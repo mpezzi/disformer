@@ -44,5 +44,12 @@ function disformer_variable_info($options) {
     'access' => 'administer disformer',
     'default' => FALSE,
   );
+  $variable['disformer_form_helper'] = array(
+    'title' => t('Disformer Form Helper', array(), $options),
+    'description' => t('Displays the form id to users with the "administer disformer" permissions.'),
+    'type' => 'boolean',
+    'access' => 'administer disformer',
+    'default' => FALSE,
+  );
   return $variable;
 }

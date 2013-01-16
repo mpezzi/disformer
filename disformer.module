@@ -54,6 +54,16 @@ function disformer_form_alter(&$form, &$form_state, $form_id) {
 
     drupal_add_js(array('disformer' => array(implode(', ', $selector) => $options)), 'setting');
   }
+
+  // Provide a handy form id helper to determine which forms to select.
+  if ( $form_id != 'disformer_admin_settings_form' ) {
+    if ( user_access('administer disformer') && variable_get('disformer_form_helper', FALSE) ) {
+      $form['disformer_form_helper'] = array(
+        '#markup' => $form_id,
+        '#weight' => -1000,
+      );
+    }
+  }
 }
 
 /**

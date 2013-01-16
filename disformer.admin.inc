@@ -39,5 +39,11 @@ function disformer_admin_settings_form($form, &$form_state) {
     '#description' => t('Disables the submission of the form so you can style elements.'),
     '#default_value' => variable_get('disformer_debug', FALSE),
   );
+  $form['disformer_form_helper'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Enable form helper.'),
+    '#description' => t('Displays the form id to users with the "administer disformer" permissions.'),
+    '#default_value' => variable_get('disformer_form_helper', FALSE),
+  );
   return system_settings_form($form);
 }
