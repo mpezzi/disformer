@@ -25,6 +25,7 @@ function disformer_menu() {
  * Implements hook_form_alter().
  */
 function disformer_form_alter(&$form, &$form_state, $form_id) {
+  // Apply disformer on enabled forms.
   if ( disformer_form_is_enabled($form_id) ) {
     $form['#attached']['js'] = array(
       drupal_get_path('module', 'disformer') . '/js/disformer.js',
