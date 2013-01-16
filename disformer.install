@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Provides installation / uninstallation functions for disformer.module
+ */
+
+/**
+ * Implements hook_uninstall().
+ */
+function disformer_uninstall() {
+  variable_del('disformer_form_ids');
+  variable_del('disformer_delay');
+  variable_del('disformer_opacity');
+  variable_del('disformer_text');
+  variable_del('disformer_debug');
+}
