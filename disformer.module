@@ -37,8 +37,8 @@ function disformer_form_alter(&$form, &$form_state, $form_id) {
     );
 
     // If overlay text variable is empty, default to "Sending ..."
-    if ( variable_get('disformer_text', 'Sending ...') != '' ) {
-      $disformer_text = variable_get('disformer_text', 'Sending ...');
+    if ( variable_get('disformer_text', '') != '' ) {
+      $disformer_text = variable_get('disformer_text', '');
     }
     else {
       $disformer_text = t('Sending ...');

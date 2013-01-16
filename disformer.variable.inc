@@ -35,7 +35,7 @@ function disformer_variable_info($options) {
     'description' => t('This text is shown to the user after the submit button is pressed.'),
     'type' => 'string',
     'access' => 'administer disformer',
-    'default' => 'Sending ...',
+    'default' => '',
   );
   $variable['disformer_debug'] = array(
     'title' => t('Disformer Debugging Mode', array(), $options),
