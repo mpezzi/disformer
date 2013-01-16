@@ -36,12 +36,20 @@ function disformer_form_alter(&$form, &$form_state, $form_id) {
       '#' . $form['#id'] . ' input[type="submit"]',
     );
 
+    // If overlay text variable is empty, default to "Sending ..."
+    if ( variable_get('disformer_text', 'Sending ...') != '' ) {
+      $disformer_text = variable_get('disformer_text', 'Sending ...');
+    }
+    else {
+      $disformer_text = t('Sending ...');
+    }
+
     // Set plugin options.
     $options = array(
+      'debug' => variable_get('disformer_debug', FALSE),
       'delay' => variable_get('disformer_delay', 1000),
       'opacity' => variable_get('disformer_opacity', 0.5),
-      'text' => variable_get('disformer_text', 'Sending ...'),
-      'debug' => variable_get('disformer_debug', FALSE),
+      'text' => $disformer_text,
     );
 
     drupal_add_js(array('disformer' => array(implode(', ', $selector) => $options)), 'setting');
