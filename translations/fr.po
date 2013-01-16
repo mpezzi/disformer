@@ -1,0 +1,107 @@
+# $Id$
+#
+# French translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  disformer.admin.inc: n/a
+#  disformer.variable.inc: n/a
+#  disformer.module: n/a
+#  disformer.info: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2013-01-16 10:16-0500\n"
+"PO-Revision-Date: 2013-01-16 10:16-0500\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: French <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n>1);\n"
+
+#: disformer.admin.inc:14
+msgid "Enable Disformer on the following forms"
+msgstr ""
+
+#: disformer.admin.inc:15
+msgid "Put each form id on a separate line. (Example: user_register_form, user_login)"
+msgstr ""
+
+#: disformer.admin.inc:20
+msgid "Delay"
+msgstr ""
+
+#: disformer.admin.inc:21 disformer.variable.inc:21
+msgid "The time to wait before showing the \"Sending ...\" overlay"
+msgstr ""
+
+#: disformer.admin.inc:26
+msgid "Opacity"
+msgstr ""
+
+#: disformer.admin.inc:27 disformer.variable.inc:28
+msgid "The opacity of the disabled form."
+msgstr ""
+
+#: disformer.admin.inc:32
+msgid "Text in overlay"
+msgstr ""
+
+#: disformer.admin.inc:33 disformer.variable.inc:35
+msgid "This text is shown to the user after the submit button is pressed."
+msgstr ""
+
+#: disformer.admin.inc:38
+msgid "Enable debugging mode."
+msgstr ""
+
+#: disformer.admin.inc:39 disformer.variable.inc:42
+msgid "Disables the submission of the form so you can style elements."
+msgstr ""
+
+#: disformer.variable.inc:13
+msgid "Disformer Form IDs"
+msgstr ""
+
+#: disformer.variable.inc:14
+msgid "Form ID with Disformer enabled on them."
+msgstr ""
+
+#: disformer.variable.inc:20
+msgid "Disformer Delay"
+msgstr ""
+
+#: disformer.variable.inc:27
+msgid "Disformer Opacity"
+msgstr ""
+
+#: disformer.variable.inc:34
+msgid "Disformer Text in overlay"
+msgstr ""
+
+#: disformer.variable.inc:41
+msgid "Disformer Debugging Mode"
+msgstr ""
+
+#: disformer.module:44
+msgid "Sending ..."
+msgstr "Envoi ..."
+
+#: disformer.module:13
+msgid "Double Form Submissions Protection"
+msgstr ""
+
+#: disformer.module:14
+msgid "Configure forms with double submit protection."
+msgstr ""
+
+#: disformer.info:0
+msgid "Disformer"
+msgstr ""
+
+#: disformer.info:0
+msgid "Provides functionality to disable forms after submission."
+msgstr ""
+
