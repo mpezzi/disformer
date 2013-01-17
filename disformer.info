@@ -4,3 +4,5 @@ core = 7.x
 
 files[] = disformer.admin.inc
 files[] = disformer.variable.inc
+
+configure = admin/config/user-interface/disformer
